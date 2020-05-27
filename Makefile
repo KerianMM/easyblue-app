@@ -19,4 +19,3 @@ node_modules: yarn.lock
 	@touch -c node_modules
 
 yarn.lock: package.json
-	$(YARN) upgrade
