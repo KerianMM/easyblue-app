@@ -1,13 +1,165 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Dashboard/> SNAPSHOT 1`] = `
-<div
-  className="container"
->
-  <h1
-    className="jsx-3144720010"
+Array [
+  <header
+    className="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary MuiPaper-elevation4"
+    id="navbar"
   >
-    Dashboard
-  </h1>
-</div>
+    <div
+      className="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+    >
+      <button
+        aria-label="menu"
+        className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-edgeStart"
+        disabled={false}
+        onBlur={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        <span
+          className="MuiIconButton-label"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root"
+            focusable="false"
+            id="menu-icon"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+            />
+          </svg>
+        </span>
+      </button>
+      <div
+        id="logo"
+      >
+        <div />
+      </div>
+    </div>
+  </header>,
+  <div
+    id="dashboard-title"
+  >
+    <p>
+      Bienvenue sur votre espace personnel 
+      
+       !
+    </p>
+    <span>
+      Retrouvez ci-dessous la liste des contrats auquels vous avez souscris.
+    </span>
+  </div>,
+  <div
+    className="MuiGrid-root w-container m-auto MuiGrid-container"
+  >
+    <div
+      className="MuiGrid-root p-m MuiGrid-item MuiGrid-grid-sm-6"
+    >
+      <div
+        className="MuiGrid-root"
+        id="company"
+      >
+        <div
+          className="MuiPaper-root MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <p>
+            Moi et ma société
+          </p>
+          <span>
+            
+          </span>
+          <span>
+            
+             
+            
+            , 
+            
+          </span>
+          <a
+            onClick={[Function]}
+          >
+            Voir mes informations
+          </a>
+        </div>
+      </div>
+      <div
+        className="MuiGrid-root"
+        id="payment"
+      >
+        <div
+          className="MuiPaper-root MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <p>
+            Mon mode de paiement
+          </p>
+          <span>
+            
+          </span>
+          <span>
+            **** **** ****
+          </span>
+          <a
+            onClick={[Function]}
+          >
+            Editer mon mode de paiement
+          </a>
+        </div>
+      </div>
+      <div
+        className="MuiGrid-root"
+        id="receipts"
+      >
+        <div
+          className="MuiPaper-root MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <p>
+            Mes dernières quittances
+          </p>
+          <div
+            id="receipts"
+          >
+            
+          </div>
+          <a
+            onClick={[Function]}
+          >
+            Afficher toutes mes quittances
+          </a>
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-root p-m MuiGrid-item MuiGrid-grid-sm-6"
+    >
+      <div
+        className="MuiGrid-root"
+        id="activities"
+      >
+        <div
+          className="MuiPaper-root MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <p>
+            Mes dernières activités
+          </p>
+          <div
+            id="activitys"
+          />
+        </div>
+      </div>
+    </div>
+  </div>,
+]
 `;
