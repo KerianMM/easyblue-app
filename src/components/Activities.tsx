@@ -3,11 +3,11 @@ import {Grid, Paper} from "@material-ui/core";
 import {ActivityInterface} from "../models/Activity";
 
 interface Props {
-    activities: ActivityInterface[];
+    activities: ActivityInterface[] | undefined;
 }
 
 const Activities: React.FC<Props> = ({activities}) => {
-    const lastActivities: ActivityInterface[] = activities.slice(0, 5);
+    const lastActivities: ActivityInterface[] = (typeof activities !== "undefined") ?activities.slice(0, 5) :[];
 
     return (
         <>

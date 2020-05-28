@@ -3,7 +3,7 @@ import {Grid, Paper} from "@material-ui/core";
 import {PaymentInterface} from "../models/Payment";
 
 interface Props {
-    payment: PaymentInterface;
+    payment: PaymentInterface | undefined;
 }
 
 const PaymentMode: React.FC<Props> = ({payment}) => {
@@ -16,7 +16,7 @@ const PaymentMode: React.FC<Props> = ({payment}) => {
             <Grid id="payment">
                 <Paper>
                     <p>Mon mode de paiement</p>
-                    <span>{payment.mode}</span>
+                    <span>{typeof payment !== "undefined" ? payment.mode : ''}</span>
                     <span>**** **** ****</span>
                     <a onClick={handleClick}>Editer mon mode de paiement</a>
                 </Paper>

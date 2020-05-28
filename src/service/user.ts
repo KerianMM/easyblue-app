@@ -1,28 +1,9 @@
 import {UserInterface} from "../models/User";
-import {users} from "../datas/users";
-import {EmailValidator} from "../utils/validators/email";
 import {LoginFormDatas} from "../interfaces/form/login";
 
 export class UserService {
-    public static getAll(): UserInterface[] {
-        return users;
-    }
-
-    public static getOne(id: string): UserInterface | undefined {
-        return users.find((user: UserInterface) => user.id === id);
-    }
-
-    public static getOneByEmail(email: string): UserInterface | undefined {
-        return users.find((user: UserInterface) => user.email === email);
-    }
-
     public static checkPassword(password: string, user: UserInterface): boolean {
         return user.password === password;
-    }
-
-    public static isValidEmail(email: string): boolean
-    {
-        return EmailValidator.isValid(email);
     }
 
     public static fetchLogin(formData: LoginFormDatas): Promise<Response>
@@ -32,5 +13,27 @@ export class UserService {
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(formData),
         });
+    }
+
+    public static fetchCurrent(email: string): Promise<Response>
+    {
+        return fetch('/api/users/current', {
+            method: 'GET',
+            headers: {
+                'Authorization': email,
+                'Content-Type': 'application/json',
+            },
+        });
+    }
+
+    public static async getCurrent(email: string): Promise<UserInterface|undefined>
+    {
+        const response: Response = await UserService.fetchCurrent(email);
+
+        if (response.status !== 200) {
+            return undefined
+        } else {
+            return await response.json();
+        }
     }
 }

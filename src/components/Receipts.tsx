@@ -3,7 +3,7 @@ import {Grid, Paper} from "@material-ui/core";
 import {ReceiptInterface} from "../models/Receipt";
 
 interface Props {
-    receipts: ReceiptInterface[];
+    receipts: ReceiptInterface[] | undefined;
 }
 
 /**
@@ -18,7 +18,7 @@ const Receipts: React.FC<Props> = ({receipts}) => {
     };
 
     const lastReceipt: () => JSX.Element | string = () => {
-        const item: ReceiptInterface | undefined = receipts.length ? receipts[0] : undefined
+        const item: ReceiptInterface | undefined = (typeof receipts !== "undefined" && receipts.length) ? receipts[0] : undefined;
 
         if (typeof item === "undefined") {
             return '';
@@ -29,7 +29,7 @@ const Receipts: React.FC<Props> = ({receipts}) => {
                 </div>
             )
         }
-    }
+    };
 
     return (
         <>

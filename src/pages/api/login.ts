@@ -2,6 +2,8 @@ import {NextApiRequest, NextApiResponse} from "next";
 import {UserService} from "../../service/user";
 import {UserInterface} from "../../models/User";
 import {LoginResponseBadArgumentError, LoginResponseError, LoginResponseSuccess} from "../../interfaces/response/login";
+import {userRepository} from "../../service/db";
+import {EmailValidator} from "../../utils/validators/email";
 
 const rejectWith405 = (res: NextApiResponse<LoginResponseError>) => res
     .status(405)
@@ -46,10 +48,10 @@ export default (req: NextApiRequest, res: NextApiResponse<LoginResponseSuccess |
         return rejectWith405(res);
     } else if (typeof req.body.email !== "string" || typeof req.body.password !== "string") {
         return rejectWith400BadFormat(res);
-    } else if (!UserService.isValidEmail(req.body.email)) {
+    } else if (!EmailValidator.isValid(req.body.email)) {
         return rejectWith400EmailInvalid(res);
     } else {
-        const user: UserInterface | undefined = UserService.getOneByEmail(req.body.email);
+        const user: UserInterface | undefined = userRepository.findOneBy([{key: "email", value: req.body.email}]);
 
         if (typeof user === "undefined") {
             return rejectWith404(res);
