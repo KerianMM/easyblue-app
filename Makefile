@@ -1,4 +1,5 @@
 YARN = yarn
+PACKAGE_DIR = node_module
 
 ##
 ## Project
@@ -6,16 +7,33 @@ YARN = yarn
 ##
 
 server: ## Install and start the project
-server: node_modules
+server: install-packages
 	$(YARN) dev
 
+test: ## Install and test the project
+test: test-run
+
+fresh-test: ## Install, refresh snapshots and test the project
+fresh-test: test-snapshots-update
+
 ##
-## Utils
+## Packages
 ## -----
 ##
 
-node_modules: yarn.lock
+install-packages: yarn.lock
 	$(YARN) install
-	@touch -c node_modules
+	@touch -c $(PACKAGE_DIR)
 
 yarn.lock: package.json
+
+##
+## Tests
+## -----
+##
+
+test-snapshots-update: install-packages
+	$(YARN) test:ci -u
+
+test-run: install-packages
+	$(YARN) test:ci
