@@ -1,6 +1,6 @@
 import React from "react";
 import {AppProps} from "next/app";
-import '../../assets/scss/login.scss';
+import '../../assets/scss/style.scss';
 
 const MyApp: React.FC<AppProps> = ({Component, pageProps}) => <Component {...pageProps} />;
 

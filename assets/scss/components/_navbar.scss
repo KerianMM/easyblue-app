@@ -1,0 +1,17 @@
+#navbar {
+  background-color: white;
+
+  #menu-icon {
+    color: $grey;
+  }
+
+  #logo {
+    @extend .w-full;
+
+    svg {
+      @extend .m-auto;
+      width: 120px;
+      display: block;
+    }
+  }
+}
