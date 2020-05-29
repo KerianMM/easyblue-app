@@ -1,0 +1,13 @@
+#login-card {
+  @extend .container
+}
+
+.logo svg {
+  width: 120px;
+  @extend .m-auto;
+  display: block;
+}
+
+#login-form {
+  @extend .p-l;
+}

@@ -1,0 +1,18 @@
+{
+  "presets": ["next/babel"],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ["./"],
+        "alias": {
+          "@/easyblue-app": ".",
+          "@/components": "./src/components",
+          "@/interfaces": "./src/interfaces",
+          "@/models": "./src/models",
+          "@/services": "./src/services"
+        }
+      }
+    ]
+  ]
+}

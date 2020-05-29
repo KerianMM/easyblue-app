@@ -1,0 +1,250 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Dashboard/> SNAPSHOT 1`] = `
+Array [
+  <header
+    className="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary MuiPaper-elevation4"
+    id="navbar"
+  >
+    <div
+      className="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+    >
+      <button
+        aria-label="menu"
+        className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-edgeStart"
+        disabled={false}
+        onBlur={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        <span
+          className="MuiIconButton-label"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root"
+            focusable="false"
+            id="menu-icon"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+            />
+          </svg>
+        </span>
+      </button>
+      <div
+        id="logo"
+      >
+        <div />
+      </div>
+    </div>
+  </header>,
+  <div
+    id="dashboard-title"
+  >
+    <p>
+      Bienvenue sur votre espace personnel 
+      
+       !
+    </p>
+    <span>
+      Retrouvez ci-dessous la liste des contrats auquels vous avez souscris.
+    </span>
+  </div>,
+  <div
+    className="MuiGrid-root w-container m-auto MuiGrid-container"
+  >
+    <div
+      className="MuiGrid-root p-m MuiGrid-item MuiGrid-grid-sm-6"
+    >
+      <div
+        className="MuiGrid-root"
+        id="company"
+      >
+        <div
+          className="MuiPaper-root p-m mb-m MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <span>
+            Moi et ma société
+          </span>
+          <br />
+          <div>
+            <div
+              className="MuiCircularProgress-root m-auto MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
+              role="progressbar"
+              style={
+                Object {
+                  "height": 40,
+                  "width": 40,
+                }
+              }
+            >
+              <svg
+                className="MuiCircularProgress-svg"
+                viewBox="22 22 44 44"
+              >
+                <circle
+                  className="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
+                  cx={44}
+                  cy={44}
+                  fill="none"
+                  r={20.2}
+                  strokeWidth={3.6}
+                  style={Object {}}
+                />
+              </svg>
+            </div>
+          </div>
+          <a
+            onClick={[Function]}
+          >
+            Voir mes informations
+          </a>
+        </div>
+      </div>
+      <div
+        className="MuiGrid-root"
+        id="payment"
+      >
+        <div
+          className="MuiPaper-root p-m mb-m MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <span>
+            Mon mode de paiement
+          </span>
+          <br />
+          <div>
+            <div
+              className="MuiCircularProgress-root m-auto MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
+              role="progressbar"
+              style={
+                Object {
+                  "height": 40,
+                  "width": 40,
+                }
+              }
+            >
+              <svg
+                className="MuiCircularProgress-svg"
+                viewBox="22 22 44 44"
+              >
+                <circle
+                  className="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
+                  cx={44}
+                  cy={44}
+                  fill="none"
+                  r={20.2}
+                  strokeWidth={3.6}
+                  style={Object {}}
+                />
+              </svg>
+            </div>
+          </div>
+          <a
+            onClick={[Function]}
+          >
+            Editer mon mode de paiement
+          </a>
+        </div>
+      </div>
+      <div
+        className="MuiGrid-root"
+      >
+        <div
+          className="MuiPaper-root p-m MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <span>
+            Mes dernières quittances
+          </span>
+          <div>
+            <div
+              className="MuiCircularProgress-root m-auto MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
+              role="progressbar"
+              style={
+                Object {
+                  "height": 40,
+                  "width": 40,
+                }
+              }
+            >
+              <svg
+                className="MuiCircularProgress-svg"
+                viewBox="22 22 44 44"
+              >
+                <circle
+                  className="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
+                  cx={44}
+                  cy={44}
+                  fill="none"
+                  r={20.2}
+                  strokeWidth={3.6}
+                  style={Object {}}
+                />
+              </svg>
+            </div>
+          </div>
+          <a
+            onClick={[Function]}
+          >
+            Afficher toutes mes quittances
+          </a>
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-root p-m MuiGrid-item MuiGrid-grid-sm-6"
+    >
+      <div
+        className="MuiGrid-root"
+      >
+        <div
+          className="MuiPaper-root p-m MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <span>
+            Mes dernières activités
+          </span>
+          <br />
+          <div>
+            <div
+              className="MuiCircularProgress-root m-auto MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
+              role="progressbar"
+              style={
+                Object {
+                  "height": 40,
+                  "width": 40,
+                }
+              }
+            >
+              <svg
+                className="MuiCircularProgress-svg"
+                viewBox="22 22 44 44"
+              >
+                <circle
+                  className="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
+                  cx={44}
+                  cy={44}
+                  fill="none"
+                  r={20.2}
+                  strokeWidth={3.6}
+                  style={Object {}}
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+]
+`;

@@ -30,7 +30,14 @@
     "isolatedModules": true,
     "sourceMap": true,
     "inlineSources": true,
-    "sourceRoot": "/"
+    "sourceRoot": "/",
+    "paths": {
+      "@/easyblue-app/*": ["./*"],
+      "@/components/*": ["./src/components/*"],
+      "@/interfaces/*": ["./src/interfaces/*"],
+      "@/models/*": ["./src/models/*"],
+      "@/services/*": ["./src/services/*"]
+    }
   },
   "exclude": [
     ".next",
