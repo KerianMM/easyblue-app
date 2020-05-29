@@ -1,8 +1,9 @@
 import '@testing-library/jest-dom';
 import React from 'react';
 import renderer, {ReactTestRenderer, ReactTestRendererJSON} from 'react-test-renderer';
-import {FormError, FormErrorContainer} from "../../src/interfaces/form/error";
-import FormErrors from "../../src/components/FormErrors";
+
+import {FormError, FormErrorContainer} from "@/interfaces/form/error";
+import FormErrors from "@/components/FormErrors";
 
 test('<FormErrors/> SNAPSHOT - EMPTY', () => {
     const formErrors: FormErrorContainer = {errors: []};

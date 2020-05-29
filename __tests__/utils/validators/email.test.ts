@@ -1,4 +1,4 @@
-import {EmailValidator} from "../../../src/utils/validators/email";
+import {EmailValidator} from "@/easyblue-app/src/utils/validators/email";
 
 describe('VALIDATOR - EMAIL', () => {
     test('Valid', () => {

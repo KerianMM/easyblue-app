@@ -1,30 +1,29 @@
-import {UserInterface} from "../models/User";
-import {CompanyInterface} from "../models/Company";
-import {PaymentInterface} from "../models/Payment";
-import {ReceiptInterface} from "../models/Receipt";
-import {ActivityInterface} from "../models/Activity";
+import {Base} from "@/models/Base";
+import {UserInterface} from "@/models/User";
+import {CompanyInterface} from "@/models/Company";
+import {PaymentInterface} from "@/models/Payment";
+import {ReceiptInterface} from "@/models/Receipt";
+import {ActivityInterface} from "@/models/Activity";
 
-import {users} from "../datas/users";
-import {companies} from "../datas/companies";
-import {payments} from "../datas/payments";
-import {receipts} from "../datas/receipts";
-import {activities} from "../datas/activities";
+import {users} from "@/easyblue-app/src/datas/users";
+import {companies} from "@/easyblue-app/src/datas/companies";
+import {payments} from "@/easyblue-app/src/datas/payments";
+import {receipts} from "@/easyblue-app/src/datas/receipts";
+import {activities} from "@/easyblue-app/src/datas/activities";
 
 interface CriteriaInterface<T> {
     key: keyof T;
     value: any;
 }
 
-interface RepositoryInterface<T> {
-    datas: T[];
-
+interface RepositoryInterface<T extends Base> {
     findAll(): T[];
 
     find(id: string): T | undefined;
 
     findBy(criterias: CriteriaInterface<T>[]): T[];
 
-    findOneBy(criterias: CriteriaInterface<T>[]): T;
+    findOneBy(criterias: CriteriaInterface<T>[]): T | undefined;
 }
 
 interface DbInterface {
@@ -35,7 +34,7 @@ interface DbInterface {
     activity: Repository<ActivityInterface>;
 }
 
-export class Repository<T> implements RepositoryInterface<T> {
+export class Repository<T extends Base> implements RepositoryInterface<T> {
     protected datas: T[];
 
     constructor(datas: T[]) {
@@ -43,7 +42,7 @@ export class Repository<T> implements RepositoryInterface<T> {
     }
 
     find(id: string) {
-        return this.datas.find((item) => item.id === id);
+        return this.datas.find((item) => item?.id === id);
     }
 
     findAll() {

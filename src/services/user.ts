@@ -1,5 +1,5 @@
-import {UserInterface} from "../models/User";
-import {LoginFormDatas} from "../interfaces/form/login";
+import {UserInterface} from "@/models/User";
+import {LoginFormDatas} from "@/interfaces/form/login";
 
 export class UserService {
     public static checkPassword(password: string, user: UserInterface): boolean {

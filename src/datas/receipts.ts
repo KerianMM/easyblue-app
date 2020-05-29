@@ -1,8 +1,28 @@
-import {Receipt, ReceiptInterface} from "../models/Receipt";
+import {ReceiptInterface} from "@/models/Receipt";
 
 export const receipts: ReceiptInterface[] = [
-    new Receipt("87fzeo5", "2020-05-25 18:05:00", "2sqfd31"),
-    new Receipt("87fzeo5", "2020-05-25 18:15:00", "2sqfd31"),
-    new Receipt("87fzeo5", "2020-05-25 18:25:00", "5qsfd68"),
-    new Receipt("87fzeo5", "2020-05-25 18:35:00", "5qsfd68")
+    {
+        id: "87fzeo1",
+        date: "avril 2017",
+        name: "RC Pro Raincoat",
+        userId: "2sqfd31",
+    },
+    {
+        id: "87fzeo3",
+        date: "avril 2017",
+        name: "RC Pro Raincoat",
+        userId: "2sqfd31",
+    },
+    {
+        id: "87fzeo5",
+        date: "avril 2017",
+        name: "RC Pro Raincoat",
+        userId: "5qsfd68",
+    },
+    {
+        id: "87fzeo9",
+        date: "avril 2017",
+        name: "RC Pro Raincoat",
+        userId: "5qsfd68",
+    }
 ];
