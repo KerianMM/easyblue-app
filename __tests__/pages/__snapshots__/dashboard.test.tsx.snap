@@ -73,21 +73,39 @@ Array [
         id="company"
       >
         <div
-          className="MuiPaper-root MuiPaper-elevation1 MuiPaper-rounded"
+          className="MuiPaper-root p-m mb-m MuiPaper-elevation1 MuiPaper-rounded"
         >
-          <p>
+          <span>
             Moi et ma société
-          </p>
-          <span>
-            
           </span>
-          <span>
-            
-             
-            
-            , 
-            
-          </span>
+          <br />
+          <div>
+            <div
+              className="MuiCircularProgress-root m-auto MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
+              role="progressbar"
+              style={
+                Object {
+                  "height": 40,
+                  "width": 40,
+                }
+              }
+            >
+              <svg
+                className="MuiCircularProgress-svg"
+                viewBox="22 22 44 44"
+              >
+                <circle
+                  className="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
+                  cx={44}
+                  cy={44}
+                  fill="none"
+                  r={20.2}
+                  strokeWidth={3.6}
+                  style={Object {}}
+                />
+              </svg>
+            </div>
+          </div>
           <a
             onClick={[Function]}
           >
@@ -100,17 +118,39 @@ Array [
         id="payment"
       >
         <div
-          className="MuiPaper-root MuiPaper-elevation1 MuiPaper-rounded"
+          className="MuiPaper-root p-m mb-m MuiPaper-elevation1 MuiPaper-rounded"
         >
-          <p>
+          <span>
             Mon mode de paiement
-          </p>
-          <span>
-            
           </span>
-          <span>
-            **** **** ****
-          </span>
+          <br />
+          <div>
+            <div
+              className="MuiCircularProgress-root m-auto MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
+              role="progressbar"
+              style={
+                Object {
+                  "height": 40,
+                  "width": 40,
+                }
+              }
+            >
+              <svg
+                className="MuiCircularProgress-svg"
+                viewBox="22 22 44 44"
+              >
+                <circle
+                  className="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
+                  cx={44}
+                  cy={44}
+                  fill="none"
+                  r={20.2}
+                  strokeWidth={3.6}
+                  style={Object {}}
+                />
+              </svg>
+            </div>
+          </div>
           <a
             onClick={[Function]}
           >
@@ -120,18 +160,39 @@ Array [
       </div>
       <div
         className="MuiGrid-root"
-        id="receipts"
       >
         <div
-          className="MuiPaper-root MuiPaper-elevation1 MuiPaper-rounded"
+          className="MuiPaper-root p-m MuiPaper-elevation1 MuiPaper-rounded"
         >
-          <p>
+          <span>
             Mes dernières quittances
-          </p>
-          <div
-            id="receipts"
-          >
-            
+          </span>
+          <div>
+            <div
+              className="MuiCircularProgress-root m-auto MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
+              role="progressbar"
+              style={
+                Object {
+                  "height": 40,
+                  "width": 40,
+                }
+              }
+            >
+              <svg
+                className="MuiCircularProgress-svg"
+                viewBox="22 22 44 44"
+              >
+                <circle
+                  className="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
+                  cx={44}
+                  cy={44}
+                  fill="none"
+                  r={20.2}
+                  strokeWidth={3.6}
+                  style={Object {}}
+                />
+              </svg>
+            </div>
           </div>
           <a
             onClick={[Function]}
@@ -146,17 +207,41 @@ Array [
     >
       <div
         className="MuiGrid-root"
-        id="activities"
       >
         <div
-          className="MuiPaper-root MuiPaper-elevation1 MuiPaper-rounded"
+          className="MuiPaper-root p-m MuiPaper-elevation1 MuiPaper-rounded"
         >
-          <p>
+          <span>
             Mes dernières activités
-          </p>
-          <div
-            id="activitys"
-          />
+          </span>
+          <br />
+          <div>
+            <div
+              className="MuiCircularProgress-root m-auto MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
+              role="progressbar"
+              style={
+                Object {
+                  "height": 40,
+                  "width": 40,
+                }
+              }
+            >
+              <svg
+                className="MuiCircularProgress-svg"
+                viewBox="22 22 44 44"
+              >
+                <circle
+                  className="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
+                  cx={44}
+                  cy={44}
+                  fill="none"
+                  r={20.2}
+                  strokeWidth={3.6}
+                  style={Object {}}
+                />
+              </svg>
+            </div>
+          </div>
         </div>
       </div>
     </div>

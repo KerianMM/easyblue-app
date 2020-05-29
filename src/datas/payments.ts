@@ -1,6 +1,16 @@
-import {Payment, PaymentInterface} from "../models/Payment";
+import {PaymentInterface} from "@/models/Payment";
 
 export const payments: PaymentInterface[] = [
-    new Payment("65qpof5", "CB visa", "2sqfd31"),
-    new Payment("65qpof5", "CB visa", "5qsfd68")
+    {
+        id: "65qpof5",
+        mode: "CB visa",
+        code: "1234 4567 7890",
+        userId: "2sqfd31",
+    },
+    {
+        id: "65qpof5",
+        mode: "CB visa",
+        code: "1234 4567 7890",
+        userId: "5qsfd68",
+    }
 ];

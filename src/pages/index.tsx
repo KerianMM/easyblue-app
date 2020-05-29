@@ -1,7 +1,8 @@
 import React, {useEffect} from 'react';
 import Head from 'next/head'
-import LoginForm from "../components/LoginForm";
 import {useRouter} from "next/router";
+
+import LoginForm from "@/components/LoginForm";
 
 const Index: React.FC = () => {
     const router = useRouter();

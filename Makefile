@@ -10,6 +10,10 @@ server: ## Install and start the project
 server: install-packages
 	$(YARN) dev
 
+build: ## Install and start the project
+build: install-packages
+	$(YARN) build
+
 test: ## Install and test the project
 test: test-run
 

@@ -1,7 +1,7 @@
 import React from "react";
 import {Grid} from "@material-ui/core";
 import {Alert} from "@material-ui/lab";
-import {FormError, FormErrorContainer} from "../interfaces/form/error";
+import {FormError, FormErrorContainer} from "@/interfaces/form/error";
 
 interface Props {
     formErrors: FormErrorContainer;

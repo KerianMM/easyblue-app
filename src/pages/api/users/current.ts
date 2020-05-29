@@ -1,9 +1,9 @@
 import {NextApiRequest, NextApiResponse} from "next";
 
-import {UserInterface} from "../../../models/User";
-import {userRepository} from "../../../service/db";
-import {EmailValidator} from "../../../utils/validators/email";
-import {ErrorResponseInterface} from "../../../interfaces/response/error";
+import {ErrorResponseInterface} from "@/interfaces/response/error";
+import {UserInterface} from "@/models/User";
+import {userRepository} from "@/services/db";
+import {EmailValidator} from "@/easyblue-app/src/utils/validators/email";
 
 const rejectWith405 = (res: NextApiResponse<ErrorResponseInterface>) => res
     .status(405)

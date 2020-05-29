@@ -1,48 +1,40 @@
 import React from "react";
 import {Grid, Paper} from "@material-ui/core";
-import {ReceiptInterface} from "../models/Receipt";
+import {ReceiptInterface} from "@/models/Receipt";
+import {CircularProgress} from "@/easyblue-app/node_modules/@material-ui/core";
 
 interface Props {
-    receipts: ReceiptInterface[] | undefined;
+    receipts: ReceiptInterface[] | null | undefined;
 }
 
-/**
- * TODO: receipt must have an assurance field
- *
- * @param receipts
- * @constructor
- */
 const Receipts: React.FC<Props> = ({receipts}) => {
     const handleClick = (event: React.SyntheticEvent) => {
         event.preventDefault()
     };
 
     const lastReceipt: () => JSX.Element | string = () => {
-        const item: ReceiptInterface | undefined = (typeof receipts !== "undefined" && receipts.length) ? receipts[0] : undefined;
-
-        if (typeof item === "undefined") {
-            return '';
+        if (receipts === null || typeof receipts === "undefined") {
+            return <CircularProgress className="m-auto"/>;
         } else {
-            return (
+            return (!receipts.length) ? <span>Aucune quittance</span> : (
                 <div className="receipt">
-                    <p>{item?.date}</p>
+                    <span>{receipts[0].date}</span><br/>
+                    <span>{receipts[0].name}</span>
                 </div>
             )
         }
     };
 
     return (
-        <>
-            <Grid id="receipts">
-                <Paper>
-                    <p>Mes dernières quittances</p>
-                    <div id="receipts">
-                        {lastReceipt()}
-                    </div>
-                    <a onClick={handleClick}>Afficher toutes mes quittances</a>
-                </Paper>
-            </Grid>
-        </>
+        <Grid>
+            <Paper className="p-m">
+                <span>Mes dernières quittances</span>
+                <div>
+                    {lastReceipt()}
+                </div>
+                <a onClick={handleClick}>Afficher toutes mes quittances</a>
+            </Paper>
+        </Grid>
     )
 };
 

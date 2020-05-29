@@ -1,3 +1,5 @@
+import {Base} from "@/models/Base";
+
 export interface LocationInterface {
   address: string;
   city: string;
@@ -5,23 +7,9 @@ export interface LocationInterface {
   country: string;
 }
 
-export interface CompanyInterface {
+export interface CompanyInterface extends Base {
   id: string;
   name: string;
   location: LocationInterface;
   userId: string;
-}
-
-export class Company implements CompanyInterface{
-  id: string;
-  name: string;
-  location: LocationInterface;
-  userId: string;
-
-  constructor(id: string, name: string, location: LocationInterface, userId: string) {
-    this.id = id;
-    this.name = name;
-    this.location = location;
-    this.userId = userId;
-  }
 }

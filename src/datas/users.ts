@@ -1,6 +1,18 @@
-import {User, UserInterface} from "../models/User";
+import {UserInterface} from "@/models/User";
 
 export const users: UserInterface[] = [
-    new User("2sqfd31", "foo@test.fr", "foo", "foo", "foo"),
-    new User( "5qsfd68", "bar@test.fr", "bar", "bar", "bar")
+    {
+        id: "2sqfd31",
+        email: "foo@test.fr",
+        password: "foo",
+        lastname: "foo",
+        firstname: "foo",
+    },
+    {
+        id: "5qsfd68",
+        email: "bar@test.fr",
+        password: "bar",
+        lastname: "bar",
+        firstname: "bar",
+    }
 ];

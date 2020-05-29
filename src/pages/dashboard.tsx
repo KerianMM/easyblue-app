@@ -1,68 +1,48 @@
 import React, {useEffect, useState} from 'react';
-import {GetStaticProps} from "next";
 import Head from 'next/head'
 import {useRouter} from "next/router";
 import {Grid} from "@material-ui/core";
 
-import Navbar from "../components/Navbar";
-import DashboardTitle from "../components/DashboardTitle";
-import Company from "../components/Company";
-import PaymentMode from "../components/PaymentMode";
-import Receipts from "../components/Receipts";
-import Activities from "../components/Activities";
+import Navbar from "@/components/Navbar";
+import DashboardTitle from "@/components/DashboardTitle";
+import Company from "@/components/Company";
+import PaymentMode from "@/components/PaymentMode";
+import Receipts from "@/components/Receipts";
+import Activities from "@/components/Activities";
 
-import {UserInterface} from "../models/User";
-import {CompanyInterface} from "../models/Company";
-import {PaymentInterface} from "../models/Payment";
-import {ReceiptInterface} from "../models/Receipt";
-import {ActivityInterface} from "../models/Activity";
+import {UserInterface} from "@/models/User";
+import {CompanyInterface} from "@/models/Company";
+import {PaymentInterface} from "@/models/Payment";
+import {ReceiptInterface} from "@/models/Receipt";
+import {ActivityInterface} from "@/models/Activity";
 
-import {UserService} from "../service/user";
+import {UserService} from "@/services/user";
+import {CompanyService} from "@/services/company";
+import {PaymentService} from "@/services/payment";
+import {ReceiptService} from "@/services/receipt";
+import {ActivityService} from "@/services/activity";
 
-interface Props {
-    user: UserInterface;
-    company: CompanyInterface;
-    payment: PaymentInterface;
-    receipts: ReceiptInterface[];
-    activities: ActivityInterface[];
+interface InitialState {
+    user: UserInterface | null;
+    company: CompanyInterface | null;
+    payment: PaymentInterface | null;
+    receipts: ReceiptInterface[] | null;
+    activities: ActivityInterface[] | null;
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-    const props: Props = {
-        user: {
-            id: '',
-            firstname: '',
-            lastname: '',
-            email: '',
-            password: ''
-        },
-        company: {
-            id: '',
-            name: '',
-            userId: '',
-            location: {
-                address: '',
-                city: '',
-                code: '',
-                country: ''
-            }
-        },
-        payment: {
-            id: '',
-            mode: '',
-            userId: ''
-        },
-        receipts: [],
-        activities: []
-    };
-
-    return {props};
-};
-
-const Dashboard: React.FC<Props> = (props) => {
+const Dashboard: React.FC = () => {
     const router = useRouter();
 
-    const [state, setState] = useState<Props>(props);
+    const initialState: InitialState = {
+        user: null,
+        company: null,
+        payment: null,
+        receipts: null,
+        activities: null
+    };
+
+    const [initialized, setInitialized] = useState<boolean>(false);
+    const [state, setState] = useState<InitialState>(initialState);
 
     /**
      * Use to redirect on dashboard if email stored
@@ -72,7 +52,9 @@ const Dashboard: React.FC<Props> = (props) => {
 
         if (!email) {
             router.push('/');
-        } else if (!state.user.id.length) {
+        } else if (!initialized) {
+            setInitialized(true);
+
             UserService.getCurrent(email)
                 .then((user: UserInterface | undefined) => {
                     if (typeof user === "undefined") {
@@ -80,9 +62,34 @@ const Dashboard: React.FC<Props> = (props) => {
                         sessionStorage.clear();
                         router.push('/');
                     } else {
-                        setState({
-                            ...state,
-                            user
+                        const toState: {
+                            user: UserInterface,
+                            company?: CompanyInterface,
+                            payment?: PaymentInterface,
+                            receipts?: ReceiptInterface[],
+                            activities?: ActivityInterface[],
+                        } = {user};
+
+                        const promises: [
+                            Promise<CompanyInterface | undefined>,
+                            Promise<PaymentInterface | undefined>,
+                            Promise<ReceiptInterface[] | undefined>,
+                            Promise<ActivityInterface[] | undefined>,
+                        ] = [
+                            CompanyService.getOneByUser(user),
+                            PaymentService.getOneByUser(user),
+                            ReceiptService.getOneByUser(user),
+                            ActivityService.getOneByUser(user),
+                        ];
+
+                        Promise.all(promises).then(([company, payment, receipts, activities]) => {
+
+                            if (typeof company !== "undefined") toState['company'] = company;
+                            if (typeof payment !== "undefined") toState['payment'] = payment;
+                            if (typeof receipts !== "undefined") toState['receipts'] = receipts;
+                            if (typeof activities !== "undefined") toState['activities'] = activities;
+
+                            setState({...state, ...toState});
                         });
                     }
                 });

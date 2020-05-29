@@ -1,17 +1,8 @@
-export interface ReceiptInterface {
+import {Base} from "@/models/Base";
+
+export interface ReceiptInterface extends Base {
   id: string;
   date: string;
+  name: string;
   userId: string;
-}
-
-export class Receipt implements ReceiptInterface{
-  id: string;
-  date: string;
-  userId: string;
-
-  constructor(id: string, date: string, userId: string) {
-    this.id = id;
-    this.date = date;
-    this.userId = userId;
-  }
 }

@@ -1,9 +1,10 @@
 import {NextApiRequest, NextApiResponse} from "next";
-import {UserService} from "../../service/user";
-import {UserInterface} from "../../models/User";
-import {LoginResponseBadArgumentError, LoginResponseError, LoginResponseSuccess} from "../../interfaces/response/login";
-import {userRepository} from "../../service/db";
-import {EmailValidator} from "../../utils/validators/email";
+
+import {LoginResponseBadArgumentError, LoginResponseError, LoginResponseSuccess} from "@/interfaces/response/login";
+import {UserInterface} from "@/models/User";
+import {userRepository} from "@/services/db";
+import {UserService} from "@/services/user";
+import {EmailValidator} from "@/easyblue-app/src/utils/validators/email";
 
 const rejectWith405 = (res: NextApiResponse<LoginResponseError>) => res
     .status(405)

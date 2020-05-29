@@ -6,11 +6,11 @@ import {useRouter} from "next/router";
 import {NextRouter} from "next/dist/next-server/lib/router/router";
 
 import FormErrors from "./FormErrors";
-import {UserService} from "../service/user";
-import {FormErrorContainer} from "../interfaces/form/error";
-import {LoginFormDatas, LoginState} from "../interfaces/form/login";
-import {LoginResponse} from "../interfaces/response/login";
-import {EmailValidator} from "../utils/validators/email";
+import {UserService} from "@/services/user";
+import {FormErrorContainer} from "@/interfaces/form/error";
+import {LoginFormDatas, LoginState} from "@/interfaces/form/login";
+import {LoginResponse} from "@/interfaces/response/login";
+import {EmailValidator} from "@/easyblue-app/src/utils/validators/email";
 
 const LoginForm: React.FC = () => {
     const router: NextRouter = useRouter();

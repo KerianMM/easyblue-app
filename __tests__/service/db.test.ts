@@ -1,5 +1,5 @@
-import {UserInterface} from "../../src/models/User";
-import {Repository} from "../../src/service/db";
+import {UserInterface} from "@/models/User";
+import {Repository} from "@/services/db";
 
 describe('REPOSITORIES', () => {
     describe('USERS', () => {
